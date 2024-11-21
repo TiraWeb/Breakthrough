@@ -12,12 +12,12 @@ import {
 import './Sidebar.css';
 
 const navItems = [
-  { icon: GraduationCap, text: 'LEARN', path: '/learn' },
-  { icon: Dumbbell, text: 'PRACTICE', path: '/practice' },
-  { icon: Trophy, text: 'LEADERBOARDS', path: '/leaderboards' },
-  { icon: ShoppingBag, text: 'SHOP', path: '/shop' },
-  { icon: User, text: 'PROFILE', path: '/profile' },
-  { icon: MoreHorizontal, text: 'MORE', path: '/more' },
+  { icon: GraduationCap, text: 'LEARN', path: '/content/learn' },
+  { icon: Dumbbell, text: 'PRACTICE', path: '/content/practice' },
+  { icon: Trophy, text: 'LEADERBOARDS', path:'/content/leaderboards' },
+  { icon: ShoppingBag, text: 'SHOP', path: '/content/shop' },
+  { icon: User, text: 'PROFILE', path: '/content/profile' },
+  { icon: MoreHorizontal, text: 'MORE', path: '/content/more' },
 ];
 
 export default function Sidebar() {

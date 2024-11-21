@@ -17,27 +17,25 @@ import './Content.css';
 
 function Content() {
   return (
-    <Router>
       <div className="app">
         <Sidebar />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/learn" element={<Learn />} />
-            <Route path="/practice" element={<Practice />} />
-            <Route path="/leaderboards" element={<Leaderboards />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/more" element={<More />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/help" element={<Help />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/friends" element={<Friends />} />
-            <Route path="/privacy" element={<Privacy />} />
+            <Route path="learn" element={<Learn />} />
+            <Route path="practice" element={<Practice />} />
+            <Route path="leaderboards" element={<Leaderboards />} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="more" element={<More />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="help" element={<Help />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="friends" element={<Friends />} />
+            <Route path="privacy" element={<Privacy />} />
           </Routes>
         </main>
       </div>
-    </Router>
   );
 }
 

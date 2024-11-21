@@ -21,7 +21,7 @@ export function SignUp() {
         </div>
       </div>
       
-      <Link to="/login" className="login-btn">LOGIN</Link>
+      <Link to="/sign/login" className="login-btn">LOGIN</Link>
     </div>
   );
 }

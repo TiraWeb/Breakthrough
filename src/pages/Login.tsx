@@ -22,7 +22,7 @@ export function Login() {
         </div>
       </div>
       
-      <Link to="/" className="login-btn">SIGN UP</Link>
+      <Link to="/sign" className="login-btn">SIGN UP</Link>
     </div>
   );
 }
