@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Home from './Home';
 import Content from './Content.tsx';
 import Sign from './Sign.tsx';
@@ -10,14 +10,16 @@ import {firebaseConfig} from "./firebase.tsx";
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
+
 function App() {
+    const [user, setUser] = useState(null);
     return (
         <div>
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
+                    <Route path="/" element={<Home />}/>
                     <Route path="/content/*" element={<Content/>}/>
-                    <Route path="/sign/*" element={<Sign/>}/>
+                    <Route path="/sign/*" element={<Sign user={user} setUser={setUser}/>}/>
                 </Routes>
             </Router>
         </div>

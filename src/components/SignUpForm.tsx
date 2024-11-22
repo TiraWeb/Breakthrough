@@ -1,4 +1,14 @@
 import React, { useState } from 'react';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import {firebaseConfig} from "../firebase.tsx";
+import { getFirestore, addDoc, doc, setDoc, collection } from "firebase/firestore";
+import { useNavigate  } from 'react-router-dom';
+
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const database = getFirestore(app);
 
 interface FormData {
   age: string;
@@ -15,9 +25,16 @@ export function SignUpForm() {
     password: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
+    const navigate = useNavigate();
+  const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      console.log('Form submitted:', formData);
+      await addDoc(collection(database, "users"), {
+          Username: formData.name,
+          email: formData.email,
+          password: formData.password
+      });
+      navigate("/");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,6 +42,7 @@ export function SignUpForm() {
       ...formData,
       [e.target.name]: e.target.value
     });
+
   };
 
   return (
